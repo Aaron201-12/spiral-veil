@@ -2,10 +2,7 @@
 <html lang="en">
 <head>
   <!-- Google Font: Cinzel (medieval serif) -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>The Spiral Veil</title>
@@ -19,7 +16,7 @@
 
   <div id="trial1" class="scroll hidden">
     <h2>Trial I: The Gentle Whisper</h2>
-    <p>2, 6, 12, 20, 30, ?</p>
+    <p class="sequence">2, 6, 12, 20, 30, ?</p>
     <form id="form1">
       <label><input type="radio" name="ans1" value="A">36</label>
       <label><input type="radio" name="ans1" value="B">42</label>
@@ -30,8 +27,37 @@
     </form>
     <p id="fb1"></p>
   </div>
-  
+
+  <div id="trial2" class="scroll hidden">
+    <h2>Trial II: The Measured Path</h2>
+    <p class="sequence">1, 4, 9, 16, 25, ?</p>
+    <p><em>“I grow with time but never rush, <br>Each step a square, never a crush. <br>From one to five, I build my name— <br>What comes next continues the game.”</em></p>
+    <form id="form2">
+      <label><input type="radio" name="ans2" value="A">30</label>
+      <label><input type="radio" name="ans2" value="B">31</label>
+      <label><input type="radio" name="ans2" value="C">35</label>
+      <label><input type="radio" name="ans2" value="D">36</label>
+      <label><input type="radio" name="ans2" value="E">40</label>
+      <button type="submit">Submit</button>
+    </form>
+    <p id="fb2"></p>
+  </div>
+
+  <div id="trial3" class="scroll hidden">
+    <h2>Trial III: The Golden Thread</h2>
+    <p class="sequence">13, 21, 34, 55, ?</p>
+    <p><em>“Born of rabbits, not of dice, <br>Each child counts their kin twice. <br>A golden thread runs through the line, <br>But break the rules—and you'll do fine.”</em></p>
+    <form id="form3">
+      <label><input type="radio" name="ans3" value="A">70</label>
+      <label><input type="radio" name="ans3" value="B">82</label>
+      <label><input type="radio" name="ans3" value="C">89</label>
+      <label><input type="radio" name="ans3" value="D">90</label>
+      <label><input type="radio" name="ans3" value="E">92</label>
+      <button type="submit">Submit</button>
+    </form>
+    <p id="fb3"></p>
+  </div>
+
 <script src="script.js"></script>
-  
 </body>
 </html>
