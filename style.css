@@ -1,0 +1,77 @@
+/* 1) Import parchment-ish font */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+body {
+  /* 2) Parchment texture + warm tone */
+  background: #f3f0e5 url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;
+  font-family: 'Cinzel', serif;
+  color: #3b2b1a;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* 3) Scroll container styling */
+.scroll {
+  position: relative;
+  background: rgba(255, 249, 237, 0.9);
+  margin: 60px auto;
+  padding: 40px 30px;
+  max-width: 640px;
+  border: 12px solid #5c4428;
+  box-shadow: 
+    0 0 20px rgba(0,0,0,0.2),
+    inset 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  line-height: 1.5;
+}
+
+.hidden { display: none; }
+
+h1, h2 {
+  margin: 0 0 20px;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+}
+h1 { font-size: 3rem; }
+h2 { font-size: 2rem; }
+
+p {
+  margin: 16px 0;
+}
+
+/* 5) Button styling */
+button {
+  background: #5c4428;
+  color: #f3f0e5;
+  border: 2px solid #3b2b1a;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+button:hover {
+  background: #3b2b1a;
+}
+
+/* 6) Form & feedback */
+label {
+  display: block;
+  margin: 8px 0;
+  cursor: pointer;
+}
+input[type="radio"] {
+  margin-right: 8px;
+}
+#fb1, #feedback, #feedback2, #feedback3 {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* 7) Sequence styling */
+.sequence {
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
