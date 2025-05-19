@@ -1,9 +1,9 @@
 window.addEventListener('DOMContentLoaded', () => {
-  // Grab elements after they exist
   const home   = document.getElementById('home');
   const trial1 = document.getElementById('trial1');
   const trial2 = document.getElementById('trial2');
   const trial3 = document.getElementById('trial3');
+  const trial4 = document.getElementById('trial4');
 
   const start  = document.getElementById('start');
   const form1  = document.getElementById('form1');
@@ -13,14 +13,13 @@ window.addEventListener('DOMContentLoaded', () => {
   const fb1    = document.getElementById('fb1');
   const fb2    = document.getElementById('fb2');
   const fb3    = document.getElementById('fb3');
+  const fb4    = document.getElementById('fb4');
 
-  // Begin the trials
   start.onclick = () => {
     home.classList.add('hidden');
     trial1.classList.remove('hidden');
   };
 
-  // Trial I logic
   form1.addEventListener('submit', e => {
     e.preventDefault();
     const choice = form1.ans1.value;
@@ -42,7 +41,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Trial II logic
   form2.addEventListener('submit', e => {
     e.preventDefault();
     const choice = form2.ans2.value;
@@ -64,7 +62,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Trial III logic
   form3.addEventListener('submit', e => {
     e.preventDefault();
     const choice = form3.ans3.value;
@@ -74,11 +71,31 @@ window.addEventListener('DOMContentLoaded', () => {
       return;
     }
     if (choice === 'C') {
-      fb3.textContent = 'Correct. You have passed the third trial.';
+      fb3.textContent = 'Correct.';
       fb3.style.color = 'green';
+      setTimeout(() => {
+        trial3.classList.add('hidden');
+        trial4.classList.remove('hidden');
+      }, 1000);
     } else {
       fb3.textContent = 'Wrong—try again.';
       fb3.style.color = 'red';
     }
+  });
+
+  // Trial IV logic
+  document.querySelectorAll('.glyph').forEach(img => {
+    img.addEventListener('click', () => {
+      const isCorrect = img.dataset.key === 'correct';
+      if (isCorrect) {
+        fb4.textContent = 'Correct. The mirror is whole.';
+        fb4.style.color = 'green';
+      } else {
+        fb4.textContent = 'Wrong glyph—look closely at the reflection.';
+        fb4.style.color = 'red';
+        img.classList.add('shake');
+        setTimeout(() => img.classList.remove('shake'), 500);
+      }
+    });
   });
 });
