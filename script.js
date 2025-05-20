@@ -170,6 +170,28 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // False Trial III
   formF3?.addEventListener('submit', e => {
+    const badText = document.getElementById('badText');
+const regretReveal = document.getElementById('regretReveal');
+const resetBtn = document.getElementById('resetBtn');
+
+// Final eerie effect on bad ending
+formF3?.addEventListener('submit', e => {
+  e.preventDefault();
+  fbF3.textContent = '';
+  trialF3.classList.add('hidden');
+  badEnding.classList.remove('hidden');
+
+  // Reveal final line after a delay
+  setTimeout(() => {
+    regretReveal.style.display = 'inline';
+  }, 3500);
+});
+
+// Reset button — sends them back to the start
+resetBtn?.addEventListener('click', () => {
+  location.reload();
+});
+
     e.preventDefault();
     fbF3.textContent = '';
     trialF3.classList.add('hidden');
