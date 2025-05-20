@@ -92,12 +92,38 @@ window.addEventListener('DOMContentLoaded', () => {
       fb4.style.color = 'inherit';
       return;
     }
-    if (choice === 'C') {
-      fb4.textContent = 'Correct. The lie unravels.';
-      fb4.style.color = 'green';
+   if (choice === 'C') {
+  fb4.textContent = 'Correct. The lie unravels.';
+  fb4.style.color = 'green';
+  setTimeout(() => {
+    trial4.classList.add('hidden');
+    trial5.classList.remove('hidden');
+  }, 1000);
+}
+
     } else {
       fb4.textContent = 'Incorrect. That truth is masked.';
       fb4.style.color = 'red';
     }
   });
+});
+
+const form5 = document.getElementById('form5');
+const fb5 = document.getElementById('fb5');
+
+form5?.addEventListener('submit', e => {
+  e.preventDefault();
+  const choice = form5.ans5.value;
+  if (!choice) {
+    fb5.textContent = 'Please select an answer.';
+    fb5.style.color = 'inherit';
+    return;
+  }
+  if (choice === 'B') {
+    fb5.textContent = 'Correct. Pain opens the final gate.';
+    fb5.style.color = 'green';
+  } else {
+    fb5.textContent = 'The Veil watches, but does not move.';
+    fb5.style.color = 'red';
+  }
 });
