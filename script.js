@@ -6,20 +6,31 @@ window.addEventListener('DOMContentLoaded', () => {
   const trial4 = document.getElementById('trial4');
   const trial5 = document.getElementById('trial5');
 
+  const trialF1 = document.getElementById('trialF1');
+  const trialF2 = document.getElementById('trialF2');
+  const trialF3 = document.getElementById('trialF3');
+  const badEnding = document.getElementById('badEnding');
+
   const start  = document.getElementById('start');
   const form1  = document.getElementById('form1');
   const form2  = document.getElementById('form2');
   const form3  = document.getElementById('form3');
   const form4  = document.getElementById('form4');
   const form5  = document.getElementById('form5');
+  const formF1 = document.getElementById('formF1');
+  const formF2 = document.getElementById('formF2');
+  const formF3 = document.getElementById('formF3');
 
   const fb1 = document.getElementById('fb1');
   const fb2 = document.getElementById('fb2');
   const fb3 = document.getElementById('fb3');
   const fb4 = document.getElementById('fb4');
   const fb5 = document.getElementById('fb5');
+  const fbF1 = document.getElementById('fbF1');
+  const fbF2 = document.getElementById('fbF2');
+  const fbF3 = document.getElementById('fbF3');
 
-  // Start button logic
+  // Start button
   if (start && home && trial1) {
     start.addEventListener('click', () => {
       home.classList.add('hidden');
@@ -115,7 +126,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Trial V
+  // Trial V with false path branch
   form5?.addEventListener('submit', e => {
     e.preventDefault();
     const choice = form5.ans5.value;
@@ -127,42 +138,41 @@ window.addEventListener('DOMContentLoaded', () => {
     if (choice === 'B') {
       fb5.textContent = 'Correct. Pain opens the final gate.';
       fb5.style.color = 'green';
+      setTimeout(() => {
+        trial5.classList.add('hidden');
+        // trial6.classList.remove('hidden'); // placeholder for future true path
+      }, 1000);
     } else {
       fb5.textContent = 'The Veil watches, but does not move.';
       fb5.style.color = 'red';
+      setTimeout(() => {
+        trial5.classList.add('hidden');
+        trialF1.classList.remove('hidden');
+      }, 1000);
     }
   });
 
-});
-const formF1 = document.getElementById('formF1');
-const formF2 = document.getElementById('formF2');
-const formF3 = document.getElementById('formF3');
-const fbF1   = document.getElementById('fbF1');
-const fbF2   = document.getElementById('fbF2');
-const fbF3   = document.getElementById('fbF3');
-const trialF1 = document.getElementById('trialF1');
-const trialF2 = document.getElementById('trialF2');
-const trialF3 = document.getElementById('trialF3');
-const badEnding = document.getElementById('badEnding');
+  // False Trial I
+  formF1?.addEventListener('submit', e => {
+    e.preventDefault();
+    fbF1.textContent = '';
+    trialF1.classList.add('hidden');
+    trialF2.classList.remove('hidden');
+  });
 
-// False Path Progression
-formF1?.addEventListener('submit', e => {
-  e.preventDefault();
-  fbF1.textContent = '';
-  trialF1.classList.add('hidden');
-  trialF2.classList.remove('hidden');
-});
+  // False Trial II
+  formF2?.addEventListener('submit', e => {
+    e.preventDefault();
+    fbF2.textContent = '';
+    trialF2.classList.add('hidden');
+    trialF3.classList.remove('hidden');
+  });
 
-formF2?.addEventListener('submit', e => {
-  e.preventDefault();
-  fbF2.textContent = '';
-  trialF2.classList.add('hidden');
-  trialF3.classList.remove('hidden');
-});
-
-formF3?.addEventListener('submit', e => {
-  e.preventDefault();
-  fbF3.textContent = '';
-  trialF3.classList.add('hidden');
-  badEnding.classList.remove('hidden');
+  // False Trial III
+  formF3?.addEventListener('submit', e => {
+    e.preventDefault();
+    fbF3.textContent = '';
+    trialF3.classList.add('hidden');
+    badEnding.classList.remove('hidden');
+  });
 });
