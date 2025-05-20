@@ -1,5 +1,4 @@
 window.addEventListener('DOMContentLoaded', () => {
-  // Element references
   const home   = document.getElementById('home');
   const trial1 = document.getElementById('trial1');
   const trial2 = document.getElementById('trial2');
@@ -20,19 +19,13 @@ window.addEventListener('DOMContentLoaded', () => {
   const fb4 = document.getElementById('fb4');
   const fb5 = document.getElementById('fb5');
 
-  // Start
+  // Start button logic
   if (start && home && trial1) {
-  start.addEventListener('click', () => {
-    home.classList.add('hidden');
-    trial1.classList.remove('hidden');
-  });
-} else {
-  console.warn('Start button or trial sections not found.');
-}
-
-    home.classList.add('hidden');
-    trial1.classList.remove('hidden');
-  });
+    start.addEventListener('click', () => {
+      home.classList.add('hidden');
+      trial1.classList.remove('hidden');
+    });
+  }
 
   // Trial I
   form1?.addEventListener('submit', e => {
@@ -100,7 +93,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Trial IV (Poetic Riddle)
+  // Trial IV
   form4?.addEventListener('submit', e => {
     e.preventDefault();
     const choice = form4.ans4.value;
@@ -122,7 +115,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Trial V (Moral Choice)
+  // Trial V
   form5?.addEventListener('submit', e => {
     e.preventDefault();
     const choice = form5.ans5.value;
