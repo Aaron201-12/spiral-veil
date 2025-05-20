@@ -21,7 +21,15 @@ window.addEventListener('DOMContentLoaded', () => {
   const fb5 = document.getElementById('fb5');
 
   // Start
-  start?.addEventListener('click', () => {
+  if (start && home && trial1) {
+  start.addEventListener('click', () => {
+    home.classList.add('hidden');
+    trial1.classList.remove('hidden');
+  });
+} else {
+  console.warn('Start button or trial sections not found.');
+}
+
     home.classList.add('hidden');
     trial1.classList.remove('hidden');
   });
