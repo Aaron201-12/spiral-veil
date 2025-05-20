@@ -189,8 +189,38 @@ formF3?.addEventListener('submit', e => {
 
 // Reset button — sends them back to the start
 resetBtn?.addEventListener('click', () => {
-  location.reload();
+  // Hide all trials
+  trial1.classList.add('hidden');
+  trial2.classList.add('hidden');
+  trial3.classList.add('hidden');
+  trial4.classList.add('hidden');
+  trial5.classList.add('hidden');
+  trialF1.classList.add('hidden');
+  trialF2.classList.add('hidden');
+  trialF3.classList.add('hidden');
+  badEnding.classList.add('hidden');
+
+  // Clear feedback
+  fb1.textContent = '';
+  fb2.textContent = '';
+  fb3.textContent = '';
+  fb4.textContent = '';
+  fb5.textContent = '';
+  fbF1.textContent = '';
+  fbF2.textContent = '';
+  fbF3.textContent = '';
+  regretReveal.style.display = 'none';
+
+  // Uncheck all radios
+  document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+
+  // Show home screen
+  home.classList.remove('hidden');
+
+  // Scroll to top
+  window.scrollTo(0, 0);
 });
+
 
     e.preventDefault();
     fbF3.textContent = '';
