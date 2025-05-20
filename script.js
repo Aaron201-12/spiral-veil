@@ -86,16 +86,23 @@ window.addEventListener('DOMContentLoaded', () => {
   // Trial IV logic
   document.querySelectorAll('.glyph').forEach(img => {
     img.addEventListener('click', () => {
-      const isCorrect = img.dataset.key === 'correct';
-      if (isCorrect) {
-        fb4.textContent = 'Correct. The mirror is whole.';
-        fb4.style.color = 'green';
-      } else {
-        fb4.textContent = 'Wrong glyph—look closely at the reflection.';
-        fb4.style.color = 'red';
-        img.classList.add('shake');
-        setTimeout(() => img.classList.remove('shake'), 500);
-      }
-    });
+        const form4 = document.getElementById('form4');
+  const fb4 = document.getElementById('fb4');
+
+  form4.addEventListener('submit', e => {
+    e.preventDefault();
+    const choice = form4.ans4.value;
+    if (!choice) {
+      fb4.textContent = 'Please select an answer.';
+      fb4.style.color = 'inherit';
+      return;
+    }
+    if (choice === 'C') {
+      fb4.textContent = 'Correct. The lie unravels.';
+      fb4.style.color = 'green';
+    } else {
+      fb4.textContent = 'Incorrect. That truth is masked.';
+      fb4.style.color = 'red';
+    }
   });
-});
+
