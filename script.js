@@ -1,5 +1,4 @@
 window.addEventListener('DOMContentLoaded', () => {
-  // DOM elements
   const home   = document.getElementById('home');
   const trial1 = document.getElementById('trial1');
   const trial2 = document.getElementById('trial2');
@@ -12,19 +11,17 @@ window.addEventListener('DOMContentLoaded', () => {
   const form3  = document.getElementById('form3');
   const form4  = document.getElementById('form4');
 
-  const fb1    = document.getElementById('fb1');
-  const fb2    = document.getElementById('fb2');
-  const fb3    = document.getElementById('fb3');
-  const fb4    = document.getElementById('fb4');
+  const fb1 = document.getElementById('fb1');
+  const fb2 = document.getElementById('fb2');
+  const fb3 = document.getElementById('fb3');
+  const fb4 = document.getElementById('fb4');
 
-  // Start button
-  start.onclick = () => {
+  start?.addEventListener('click', () => {
     home.classList.add('hidden');
     trial1.classList.remove('hidden');
-  };
+  });
 
-  // Trial I
-  form1.addEventListener('submit', e => {
+  form1?.addEventListener('submit', e => {
     e.preventDefault();
     const choice = form1.ans1.value;
     if (!choice) {
@@ -45,8 +42,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Trial II
-  form2.addEventListener('submit', e => {
+  form2?.addEventListener('submit', e => {
     e.preventDefault();
     const choice = form2.ans2.value;
     if (!choice) {
@@ -67,8 +63,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Trial III
-  form3.addEventListener('submit', e => {
+  form3?.addEventListener('submit', e => {
     e.preventDefault();
     const choice = form3.ans3.value;
     if (!choice) {
@@ -89,8 +84,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Trial IV (Poetic Riddle)
-  form4.addEventListener('submit', e => {
+  form4?.addEventListener('submit', e => {
     e.preventDefault();
     const choice = form4.ans4.value;
     if (!choice) {
