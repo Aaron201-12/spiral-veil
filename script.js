@@ -1,4 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
+  // DOM elements
   const home   = document.getElementById('home');
   const trial1 = document.getElementById('trial1');
   const trial2 = document.getElementById('trial2');
@@ -9,17 +10,20 @@ window.addEventListener('DOMContentLoaded', () => {
   const form1  = document.getElementById('form1');
   const form2  = document.getElementById('form2');
   const form3  = document.getElementById('form3');
+  const form4  = document.getElementById('form4');
 
   const fb1    = document.getElementById('fb1');
   const fb2    = document.getElementById('fb2');
   const fb3    = document.getElementById('fb3');
   const fb4    = document.getElementById('fb4');
 
+  // Start button
   start.onclick = () => {
     home.classList.add('hidden');
     trial1.classList.remove('hidden');
   };
 
+  // Trial I
   form1.addEventListener('submit', e => {
     e.preventDefault();
     const choice = form1.ans1.value;
@@ -41,6 +45,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Trial II
   form2.addEventListener('submit', e => {
     e.preventDefault();
     const choice = form2.ans2.value;
@@ -62,6 +67,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Trial III
   form3.addEventListener('submit', e => {
     e.preventDefault();
     const choice = form3.ans3.value;
@@ -83,12 +89,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Trial IV logic
-  document.querySelectorAll('.glyph').forEach(img => {
-    img.addEventListener('click', () => {
-        const form4 = document.getElementById('form4');
-  const fb4 = document.getElementById('fb4');
-
+  // Trial IV (Poetic Riddle)
   form4.addEventListener('submit', e => {
     e.preventDefault();
     const choice = form4.ans4.value;
@@ -105,4 +106,4 @@ window.addEventListener('DOMContentLoaded', () => {
       fb4.style.color = 'red';
     }
   });
-
+});
