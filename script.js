@@ -1,26 +1,32 @@
 window.addEventListener('DOMContentLoaded', () => {
+  // Element references
   const home   = document.getElementById('home');
   const trial1 = document.getElementById('trial1');
   const trial2 = document.getElementById('trial2');
   const trial3 = document.getElementById('trial3');
   const trial4 = document.getElementById('trial4');
+  const trial5 = document.getElementById('trial5');
 
   const start  = document.getElementById('start');
   const form1  = document.getElementById('form1');
   const form2  = document.getElementById('form2');
   const form3  = document.getElementById('form3');
   const form4  = document.getElementById('form4');
+  const form5  = document.getElementById('form5');
 
   const fb1 = document.getElementById('fb1');
   const fb2 = document.getElementById('fb2');
   const fb3 = document.getElementById('fb3');
   const fb4 = document.getElementById('fb4');
+  const fb5 = document.getElementById('fb5');
 
+  // Start
   start?.addEventListener('click', () => {
     home.classList.add('hidden');
     trial1.classList.remove('hidden');
   });
 
+  // Trial I
   form1?.addEventListener('submit', e => {
     e.preventDefault();
     const choice = form1.ans1.value;
@@ -42,6 +48,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Trial II
   form2?.addEventListener('submit', e => {
     e.preventDefault();
     const choice = form2.ans2.value;
@@ -63,6 +70,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Trial III
   form3?.addEventListener('submit', e => {
     e.preventDefault();
     const choice = form3.ans3.value;
@@ -84,6 +92,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Trial IV (Poetic Riddle)
   form4?.addEventListener('submit', e => {
     e.preventDefault();
     const choice = form4.ans4.value;
@@ -92,38 +101,34 @@ window.addEventListener('DOMContentLoaded', () => {
       fb4.style.color = 'inherit';
       return;
     }
-   if (choice === 'C') {
-  fb4.textContent = 'Correct. The lie unravels.';
-  fb4.style.color = 'green';
-  setTimeout(() => {
-    trial4.classList.add('hidden');
-    trial5.classList.remove('hidden');
-  }, 1000);
-}
-
+    if (choice === 'C') {
+      fb4.textContent = 'Correct. The lie unravels.';
+      fb4.style.color = 'green';
+      setTimeout(() => {
+        trial4.classList.add('hidden');
+        trial5.classList.remove('hidden');
+      }, 1000);
     } else {
       fb4.textContent = 'Incorrect. That truth is masked.';
       fb4.style.color = 'red';
     }
   });
-});
 
-const form5 = document.getElementById('form5');
-const fb5 = document.getElementById('fb5');
-
-form5?.addEventListener('submit', e => {
-  e.preventDefault();
-  const choice = form5.ans5.value;
-  if (!choice) {
-    fb5.textContent = 'Please select an answer.';
-    fb5.style.color = 'inherit';
-    return;
-  }
-  if (choice === 'B') {
-    fb5.textContent = 'Correct. Pain opens the final gate.';
-    fb5.style.color = 'green';
-  } else {
-    fb5.textContent = 'The Veil watches, but does not move.';
-    fb5.style.color = 'red';
-  }
+  // Trial V (Moral Choice)
+  form5?.addEventListener('submit', e => {
+    e.preventDefault();
+    const choice = form5.ans5.value;
+    if (!choice) {
+      fb5.textContent = 'Please select an answer.';
+      fb5.style.color = 'inherit';
+      return;
+    }
+    if (choice === 'B') {
+      fb5.textContent = 'Correct. Pain opens the final gate.';
+      fb5.style.color = 'green';
+    } else {
+      fb5.textContent = 'The Veil watches, but does not move.';
+      fb5.style.color = 'red';
+    }
+  });
 });
