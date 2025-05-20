@@ -132,4 +132,37 @@ window.addEventListener('DOMContentLoaded', () => {
       fb5.style.color = 'red';
     }
   });
+
+});
+const formF1 = document.getElementById('formF1');
+const formF2 = document.getElementById('formF2');
+const formF3 = document.getElementById('formF3');
+const fbF1   = document.getElementById('fbF1');
+const fbF2   = document.getElementById('fbF2');
+const fbF3   = document.getElementById('fbF3');
+const trialF1 = document.getElementById('trialF1');
+const trialF2 = document.getElementById('trialF2');
+const trialF3 = document.getElementById('trialF3');
+const badEnding = document.getElementById('badEnding');
+
+// False Path Progression
+formF1?.addEventListener('submit', e => {
+  e.preventDefault();
+  fbF1.textContent = '';
+  trialF1.classList.add('hidden');
+  trialF2.classList.remove('hidden');
+});
+
+formF2?.addEventListener('submit', e => {
+  e.preventDefault();
+  fbF2.textContent = '';
+  trialF2.classList.add('hidden');
+  trialF3.classList.remove('hidden');
+});
+
+formF3?.addEventListener('submit', e => {
+  e.preventDefault();
+  fbF3.textContent = '';
+  trialF3.classList.add('hidden');
+  badEnding.classList.remove('hidden');
 });
