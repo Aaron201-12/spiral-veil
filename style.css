@@ -116,3 +116,38 @@ input[type="radio"] {
   100% { transform: translateX(0); }
 }
 }
+
+/* Trial Visual Effects */
+.scroll.glow {
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+}
+.scroll.shake {
+  animation: shake 0.4s;
+}
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+.scroll.vignette {
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.6);
+}
+.scroll.flicker {
+  animation: flickerAnim 1.5s infinite;
+}
+@keyframes flickerAnim {
+  0%, 100% { opacity: 1; }
+  45% { opacity: 0.85; }
+  60% { opacity: 0.6; }
+  75% { opacity: 1; }
+}
+.scroll.breathe {
+  animation: breathePulse 4s ease-in-out infinite;
+}
+@keyframes breathePulse {
+  0% { box-shadow: 0 0 10px rgba(255,255,255,0.1); }
+  50% { box-shadow: 0 0 25px rgba(255,255,255,0.4); }
+  100% { box-shadow: 0 0 10px rgba(255,255,255,0.1); }
+}
