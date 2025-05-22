@@ -105,38 +105,57 @@
 <!-- False Trial 1 -->
 <div id="trialF1" class="scroll hidden">
   <h2>Trial F1: The Kind Voice</h2>
-  <p><em>"This path is soft, and free of stone.<br>Surely you were right to come alone."</em></p>
+  <p><em>"This path is soft, and free of stone.<br>You were wise to come alone."</em></p>
   <form id="formF1">
-    <label><input type="radio" name="ansF1" value="A">Keep walking</label>
-    <label><input type="radio" name="ansF1" value="B">Call out to the Veil</label>
+    <label><input type="radio" name="ansF1" value="A">Step gently</label>
+    <label><input type="radio" name="ansF1" value="B">Call out</label>
     <button type="submit">Submit</button>
   </form>
   <p id="fbF1"></p>
 </div>
 
 <!-- False Trial 2 -->
-<div id="trialF2" class="scroll hidden">
+<div id="trialF2" class="scroll hidden" style="filter: grayscale(30%) blur(0.3px); font-style: italic;">
   <h2>Trial F2: The Glass Path</h2>
-  <p><em>"Every answer is correct. You’ve earned the right to rest."</em></p>
+  <p><em>“Everÿ anśwer is... <span style='opacity:0.6;'>acceptable</span>.<br>Thisss is a safe place.”</em></p>
   <form id="formF2">
-    <label><input type="radio" name="ansF2" value="A">Sit down</label>
-    <label><input type="radio" name="ansF2" value="B">Break the glass</label>
+    <label><input type="radio" name="ansF2" value="A">Sit</label>
+    <label><input type="radio" name="ansF2" value="B">Listen</label>
     <button type="submit">Submit</button>
   </form>
   <p id="fbF2"></p>
 </div>
 
 <!-- False Trial 3 -->
-<div id="trialF3" class="scroll hidden">
+<div id="trialF3" class="scroll hidden" style="filter: grayscale(80%); text-shadow: 0 0 6px red;">
   <h2>Trial F3: The Final Lull</h2>
-  <p><em>"You’ve reached the end. But it is not your truth."</em></p>
+  <p><em>
+    You’ve reached the end.<br>
+    But it i̷̛͍s͞ ͠n͜o͏t ̢yo͞u̧r̢ t̵r̸u͝t̶h̶.
+  </em></p>
   <form id="formF3">
-    <label><input type="radio" name="ansF3" value="A">Sleep</label>
-    <label><input type="radio" name="ansF3" value="B">Resist</label>
+    <label><input type="radio" name="ansF3" value="A">Surrender</label>
+    <label><input type="radio" name="ansF3" value="B">Sleep</label>
     <button type="submit">Submit</button>
   </form>
   <p id="fbF3"></p>
 </div>
+
+<!-- False Trial 4 -->
+<div id="trialF4" class="scroll hidden" style="background-color:#1a1a1a; color:#eee; font-family: monospace;">
+  <h2>Trial F4: The Whispering Wall</h2>
+  <p><em>
+    You should have chosen pain.<br>
+    Now, you must choose again... or forget.
+  </em></p>
+  <form id="formF4">
+    <label><input type="radio" name="ansF4" value="A">Try Again</label>
+    <label><input type="radio" name="ansF4" value="B">Forget</label>
+    <button type="submit">Submit</button>
+  </form>
+  <p id="fbF4"></p>
+</div>
+
 
 <!-- Bad Ending -->
 <div id="badEnding" class="scroll hidden" style="background-color: #1e1e1e; color: #f3f0e5;">
