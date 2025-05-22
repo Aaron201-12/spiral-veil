@@ -5,11 +5,10 @@ window.addEventListener('DOMContentLoaded', () => {
   const trial3 = document.getElementById('trial3');
   const trial4 = document.getElementById('trial4');
   const trial5 = document.getElementById('trial5');
-
   const trialF1 = document.getElementById('trialF1');
   const trialF2 = document.getElementById('trialF2');
   const trialF3 = document.getElementById('trialF3');
-  const badEnding = document.getElementById('badEnding');
+  const trialF4 = document.getElementById('trialF4');
 
   const start  = document.getElementById('start');
   const form1  = document.getElementById('form1');
@@ -20,6 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const formF1 = document.getElementById('formF1');
   const formF2 = document.getElementById('formF2');
   const formF3 = document.getElementById('formF3');
+  const formF4 = document.getElementById('formF4');
 
   const fb1 = document.getElementById('fb1');
   const fb2 = document.getElementById('fb2');
@@ -29,6 +29,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const fbF1 = document.getElementById('fbF1');
   const fbF2 = document.getElementById('fbF2');
   const fbF3 = document.getElementById('fbF3');
+  const fbF4 = document.getElementById('fbF4');
 
   // Start button
   if (start && home && trial1) {
@@ -126,7 +127,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Trial V with false path branch
+  // Trial V
   form5?.addEventListener('submit', e => {
     e.preventDefault();
     const choice = form5.ans5.value;
@@ -140,10 +141,10 @@ window.addEventListener('DOMContentLoaded', () => {
       fb5.style.color = 'green';
       setTimeout(() => {
         trial5.classList.add('hidden');
-        // trial6.classList.remove('hidden'); // placeholder for future true path
+        // trial6.classList.remove('hidden'); // future true path
       }, 1000);
     } else {
-      fb5.textContent = 'The Veil watches, but does not move.';
+      fb5.textContent = 'Incorrect path.';
       fb5.style.color = 'red';
       setTimeout(() => {
         trial5.classList.add('hidden');
@@ -152,79 +153,47 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // False Trial I
+  // False Trials
   formF1?.addEventListener('submit', e => {
     e.preventDefault();
-    fbF1.textContent = '';
     trialF1.classList.add('hidden');
     trialF2.classList.remove('hidden');
   });
 
-  // False Trial II
   formF2?.addEventListener('submit', e => {
     e.preventDefault();
-    fbF2.textContent = '';
     trialF2.classList.add('hidden');
     trialF3.classList.remove('hidden');
   });
 
-  // False Trial III
   formF3?.addEventListener('submit', e => {
-    const badText = document.getElementById('badText');
-const regretReveal = document.getElementById('regretReveal');
-const resetBtn = document.getElementById('resetBtn');
-
-// Final eerie effect on bad ending
-formF3?.addEventListener('submit', e => {
-  e.preventDefault();
-  fbF3.textContent = '';
-  trialF3.classList.add('hidden');
-  badEnding.classList.remove('hidden');
-
-  // Reveal final line after a delay
-  setTimeout(() => {
-    regretReveal.style.display = 'inline';
-  }, 3500);
-});
-
-// Reset button — sends them back to the start
-resetBtn?.addEventListener('click', () => {
-  // Hide all trials
-  trial1.classList.add('hidden');
-  trial2.classList.add('hidden');
-  trial3.classList.add('hidden');
-  trial4.classList.add('hidden');
-  trial5.classList.add('hidden');
-  trialF1.classList.add('hidden');
-  trialF2.classList.add('hidden');
-  trialF3.classList.add('hidden');
-  badEnding.classList.add('hidden');
-
-  // Clear feedback
-  fb1.textContent = '';
-  fb2.textContent = '';
-  fb3.textContent = '';
-  fb4.textContent = '';
-  fb5.textContent = '';
-  fbF1.textContent = '';
-  fbF2.textContent = '';
-  fbF3.textContent = '';
-  regretReveal.style.display = 'none';
-
-  // Uncheck all radios
-  document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
-
-  // Show home screen
-  home.classList.remove('hidden');
-
-  // Scroll to top
-  window.scrollTo(0, 0);
-});
-
-
     e.preventDefault();
-    fbF3.textContent = '';
     trialF3.classList.add('hidden');
-    badEnding.classList.remove('hidden');
+    trialF4.classList.remove('hidden');
+  });
+
+  formF4?.addEventListener('submit', e => {
+    e.preventDefault();
+    const choice = formF4.ansF4.value;
+    if (!choice) {
+      fbF4.textContent = 'Choose.';
+      fbF4.style.color = 'inherit';
+      return;
+    }
+
+    if (choice === 'A') {
+      trialF4.classList.add('hidden');
+      home.classList.remove('hidden');
+      document.querySelectorAll('.scroll').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('input[type="radio"]').forEach(input => input.checked = false);
+      document.querySelectorAll('p[id^="fb"]').forEach(p => p.textContent = '');
+      window.scrollTo(0, 0);
+    } else {
+      fbF4.textContent = 'The Veil forgets you too.';
+      fbF4.style.color = '#990000';
+      setTimeout(() => {
+        trialF4.innerHTML = '<h2 style="color:#990000;">You Are Gone</h2><p><em>Even the Veil cannot find you.</em></p>';
+      }, 2000);
+    }
   });
 });
