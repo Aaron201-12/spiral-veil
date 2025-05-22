@@ -1,3 +1,4 @@
+
 window.addEventListener('DOMContentLoaded', () => {
   const home   = document.getElementById('home');
   const trial1 = document.getElementById('trial1');
@@ -141,7 +142,7 @@ window.addEventListener('DOMContentLoaded', () => {
       fb5.style.color = 'green';
       setTimeout(() => {
         trial5.classList.add('hidden');
-        // trial6.classList.remove('hidden'); // future true path
+        // trial6.classList.remove('hidden'); // placeholder for true path
       }, 1000);
     } else {
       fb5.textContent = 'Incorrect path.';
@@ -181,28 +182,24 @@ window.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-   if (choice === 'A') {
-  trialF4.classList.add('hidden');
+    if (choice === 'A') {
+      trialF4.classList.add('hidden');
 
-  // Reset all radios and feedback
-  document.querySelectorAll('input[type="radio"]').forEach(input => input.checked = false);
-  document.querySelectorAll('p[id^="fb"]').forEach(p => p.textContent = '');
+      // Reset radio buttons and feedback
+      document.querySelectorAll('input[type="radio"]').forEach(input => input.checked = false);
+      document.querySelectorAll('p[id^="fb"]').forEach(p => p.textContent = '');
 
-  // Show Trial V again
-  trial5.classList.remove('hidden');
+      // Restart at Trial V with whisper
+      trial5.classList.remove('hidden');
+      fb5.textContent = 'You may choose again... but not forever.';
+      fb5.style.color = '#777';
 
-  // Whisper message appears for 3 seconds
-  fb5.textContent = 'You may choose again... but not forever.';
-  fb5.style.color = '#777';
+      setTimeout(() => {
+        fb5.textContent = '';
+        fb5.style.color = 'inherit';
+      }, 3000);
 
-  setTimeout(() => {
-    fb5.textContent = '';
-    fb5.style.color = 'inherit';
-  }, 3000);
-
-  window.scrollTo(0, 0);
-}
-
+      window.scrollTo(0, 0);
     } else {
       fbF4.textContent = 'The Veil forgets you too.';
       fbF4.style.color = '#990000';
