@@ -1,4 +1,3 @@
-
 window.addEventListener('DOMContentLoaded', () => {
   const home   = document.getElementById('home');
   const trial1 = document.getElementById('trial1');
