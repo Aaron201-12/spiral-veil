@@ -141,7 +141,7 @@ window.addEventListener('DOMContentLoaded', () => {
       fb5.style.color = 'green';
       setTimeout(() => {
         trial5.classList.add('hidden');
-        // trial6.classList.remove('hidden'); // placeholder for true path
+        // trial6.classList.remove('hidden'); // future path
       }, 1000);
     } else {
       fb5.textContent = 'Incorrect path.';
@@ -184,11 +184,11 @@ window.addEventListener('DOMContentLoaded', () => {
     if (choice === 'A') {
       trialF4.classList.add('hidden');
 
-      // Reset radio buttons and feedback
+      // Reset inputs and feedback
       document.querySelectorAll('input[type="radio"]').forEach(input => input.checked = false);
       document.querySelectorAll('p[id^="fb"]').forEach(p => p.textContent = '');
 
-      // Restart at Trial V with whisper
+      // Return to Trial V with message
       trial5.classList.remove('hidden');
       fb5.textContent = 'You may choose again... but not forever.';
       fb5.style.color = '#777';
