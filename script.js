@@ -181,13 +181,28 @@ window.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    if (choice === 'A') {
-      trialF4.classList.add('hidden');
-      home.classList.remove('hidden');
-      document.querySelectorAll('.scroll').forEach(el => el.classList.add('hidden'));
-      document.querySelectorAll('input[type="radio"]').forEach(input => input.checked = false);
-      document.querySelectorAll('p[id^="fb"]').forEach(p => p.textContent = '');
-      window.scrollTo(0, 0);
+   if (choice === 'A') {
+  trialF4.classList.add('hidden');
+
+  // Reset all radios and feedback
+  document.querySelectorAll('input[type="radio"]').forEach(input => input.checked = false);
+  document.querySelectorAll('p[id^="fb"]').forEach(p => p.textContent = '');
+
+  // Show Trial V again
+  trial5.classList.remove('hidden');
+
+  // Whisper message appears for 3 seconds
+  fb5.textContent = 'You may choose again... but not forever.';
+  fb5.style.color = '#777';
+
+  setTimeout(() => {
+    fb5.textContent = '';
+    fb5.style.color = 'inherit';
+  }, 3000);
+
+  window.scrollTo(0, 0);
+}
+
     } else {
       fbF4.textContent = 'The Veil forgets you too.';
       fbF4.style.color = '#990000';
